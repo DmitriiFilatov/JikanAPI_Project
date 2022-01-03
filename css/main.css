@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Mukta", sans-serif;
+
+  --bg-first: #8cd99c;
+  --bg-second: #eef6e6;
+  --bg-third: #060a13;
+  --bg-fourth: #53c685;
+  --bg-fourth-accent: #49a16f;
+
+  --background-color: #777c79;
+  --fc-darkblue: hsl(234, 12%, 34%);
+  --fc-grayishblue: hsl(227, 4%, 46%);
+  --fc-veryLightGray: hsl(0, 0%, 98%);
+}
+
+/* GENERAL STYLES */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--fc-veryLightGray);
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: var(--ff-primary);
+}
+
+label {
+  display: inline-block;
+  width: min-content;
+  height: min-content;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[name="types"]:checked + label {
+  color: var(--bg-fourth);
+  font-weight: bold;
+}
+
+input[name="top_types"]:checked + label {
+  color: white;
+  background-color: var(--bg-fourth-accent);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  position: absolute;
+  top: 0.25em;
+  right: 1.25em;
+  list-style: none;
+}
+
+.github-icon {
+  font-size: 2.3em;
+  color: black;
+  transition-duration: 0.3s;
+}
+.github-icon:hover {
+  color: var(--bg-fourth);
+}
+
+/* SECTION SEARCH */
+.section-search {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 6em;
+}
+
+.section-search::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 2em auto;
+  background: rgb(148, 148, 148);
+  opacity: 0.75;
+}
+
+.search-radiobuttons {
+  margin-bottom: 0.5em;
+  width: max-content;
+  font-family: var(--ff-secondary);
+  font-size: 1.25rem;
+}
+
+.search-area {
+  display: grid;
+  grid-template-columns: auto 80px;
+  grid-template-areas: "query button";
+}
+
+.search-query {
+  grid-area: query;
+  background: var(--bg-second);
+  border-top: 2px solid var(--bg-fourth);
+  border-right: transparent;
+  border-bottom: 2px solid var(--bg-fourth);
+  border-left: 2px solid var(--bg-fourth);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 1em;
+  font-size: 1rem; /*CHANGE LATER*/
+  font-family: var(--ff-primary);
+  outline: 0;
+  width: 100%;
+}
+
+.search-btn {
+  grid-area: button;
+  font-family: var(--ff-primary);
+  padding: 1em 1em 1em 0;
+  text-align: center;
+  font-size: 1rem; /*CHANGE LATER*/
+  background: var(--bg-second);
+  border-left: transparent;
+  border-top: 2px solid var(--bg-fourth);
+  border-right: 2px solid var(--bg-fourth);
+  border-bottom: 2px solid var(--bg-fourth);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition-duration: 0.2s;
+  width: 100%;
+  cursor: pointer;
+}
+.search-btn:hover {
+  color: var(--bg-fourth-accent);
+}
+
+/* SECTION DISPLAY */
+.section-display {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 4em;
+  width: 75vw;
+}
+
+.display-header {
+  color: var(--bg-fourth-accent);
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+.display-header p {
+  font-size: 2rem;
+  margin: 0;
+}
+.display-header label {
+  color: var(--fc-darkblue);
+  border: 2px solid var(--bg-fourth-accent);
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  text-align: center;
+}
+
+.display-data {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.item-card {
+  display: grid;
+  grid-column-gap: 1em;
+  padding: 0.75em;
+  box-shadow: 0px 30px 40px -20px var(--bg-third);
+  border: 3px solid var(--bg-fourth-accent);
+  margin: 0.75em;
+  height: 340px;
+  min-height: 0;
+  width: 23vw;
+  background-color: var(--fc-veryLightGray);
+  border-radius: 6px;
+  grid-template-areas: "img descr";
+  grid-template-columns: 180px auto;
+}
+
+.card-img {
+  grid-area: img;
+  max-width: 100%;
+  border: 3px solid var(--bg-fourth-accent);
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-descr {
+  grid-area: descr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-title {
+  text-align: center;
+  color: var(--fc-darkblue);
+  font-size: 1.125rem;
+  font-weight: bold;
+  height: 20%;
+}
+
+.descr-text {
+  font-size: 1rem;
+  color: var(--fc-grayishblue);
+}

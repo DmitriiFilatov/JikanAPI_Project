@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--  STYLES  -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap" rel="stylesheet"> 
+    
+    <title>Anime Lookup App</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="links">
+                <li class="links-github">
+                    <a href="https://github.com/DmitriiFilatov/PortfolioWebsite" class="link-href">
+                        <i class="fab fa-github github-icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section-search">
+        <div class="search-radiobuttons">
+            <input type="radio" name="types" id="type_anime"><label for="type_anime">Anime</label>
+            <input type="radio" name="types" id="type_manga"><label for="type_manga">Manga</label>
+        </div>
+        <div class="search-area">
+            <input type="text" name="query" id="search_query" class="search-query" placeholder="Search your favourite title..">
+            <button class="search-btn" id="btn_search">Search</button>
+        </div> 
+        
+    </section>
+
+    <section class="section-display">
+        <div class="display-header">
+            <p id="display_header">Top Anime Of All Time</p>
+            <div class="display-radiobuttons">
+                <input type="radio" name="top_types" id="top_anime"><label for="top_anime">Top Anime</label>
+                <input type="radio" name="top_types" id="top_manga"><label for="top_manga">Top Manga</label>
+            </div>
+        </div>
+        
+        <div class="display-data" id="results"></div>
+    </section>
+    
+    <footer>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="JikanAPI.js"></script>
+    <script src="UI.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
