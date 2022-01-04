@@ -62,23 +62,42 @@ input[name="top_types"]:checked + label {
 }
 
 /* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
+
+.nav {
+  position: absolute;
+  margin: 1em 1em 0 0;
+  top: 0;
+  right: 0;
 }
 
 .links {
-  position: absolute;
-  top: 0.25em;
-  right: 1.25em;
+  display: flex;
+  flex-direction: row;
   list-style: none;
+}
+
+.nav-link {
+  padding: 0 0.75em;
+  text-align: center;
+}
+
+.nav-link {
+  font-family: var(--ff-secondary);
+  color: #060a13;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.nav-link-text {
+  font-size: 1.5rem;
 }
 
 .github-icon {
   font-size: 2.3em;
   color: black;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
 }
+.nav-link:hover,
 .github-icon:hover {
   color: var(--bg-fourth);
 }
