@@ -14,19 +14,30 @@ class UI {
         
         this.display.innerHTML += 
         `<div class="item-card">
-            <a href=${item.url}>
-                <img class="card-img" src="${item.image_url}" alt="123">
-            </a>
-            <div class="card-descr">
-                <!-- <a href=${item.url} class="card-title">${item.title}</a> -->
-                <p class="card-title">${item.title}</p>
-                <div class="descr-fields">
-                    <p class="descr-text">Score: ${item.score}</p>
-                    <p class="descr-text">Episodes: ${item.episodes}</p>
-                    <p class="descr-text">Aired: ${item.start_date} - ${item.end_date}</p>
-                    <p class="descr-text">MAL Members: ${item.members}</p>
-                </div>
+            <div class="card-img">
+                <a href=${item.url}>
+                    <img class="item-img" src="${item.image_url}" alt="123">
+                </a>
             </div>
+            <p class="card-title">${item.title}</p>
+            <div class="card-descr">
+                    <div class="descr-field">
+                        <i class="far fa-star descr-icon1"></i>
+                        <p>Score: ${item.score}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-book-open descr-icon2"></i>
+                        <p>Episodes: ${item.episodes}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-clock descr-icon3"></i>
+                        <p>Aired: ${item.start_date} - ${item.end_date}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-users descr-icon4"></i>
+                        <p>MAL Members: ${item.members}</p>
+                    </div>
+                </div>
         </div>`;
     }
 
@@ -41,17 +52,24 @@ class UI {
         
         this.display.innerHTML += 
         `<div class="item-card">
-            <a href=${item.url}>
-                <img class="card-img" src="${item.image_url}" alt="123">
-            </a>
+            <div class="card-img">
+                <a href=${item.url}>
+                    <img class="item-img" src="${item.image_url}" alt="123">
+                </a>
+            </div>
+            <p class="card-title">${item.title}</p>
             <div class="card-descr">
-                <!-- <a href=${item.url} class="card-title">${item.title}</a> -->
-                <p class="card-title">${item.title}</p>
-                <div class="descr-fields">
-                    <p class="descr-text">Score: ${item.score}</p>
-                    <p class="descr-text">Chapters: ${item.chapters}</p>
-                    <p class="descr-text">Published: ${item.start_date} - ${item.end_date}</p>
-                    <p class="descr-text">MAL Members: ${item.members}</p>
+                <div class="descr-field">
+                    <i class="far fa-star descr-icon1"></i>
+                    <p>Score: ${item.score}</p>
+                </div>
+                <div class="descr-field">
+                    <i class="fas fa-clock descr-icon3"></i>
+                    <p>Published: ${item.start_date} - ${item.end_date}</p>
+                </div>
+                <div class="descr-field">
+                    <i class="fas fa-users descr-icon4"></i>
+                    <p>MAL Members: ${item.members}</p>
                 </div>
             </div>
         </div>`;
@@ -61,17 +79,28 @@ class UI {
         if (type == 'anime'){
             this.display.innerHTML +=  
             `<div class="item-card">
-                <a href=${item.url}>
-                    <img class="card-img" src="${item.image_url}" alt="123">
-                </a>
+                <div class="card-img">
+                    <a href=${item.url}>
+                        <img class="item-img" src="${item.image_url}" alt="123">
+                    </a>
+                </div>
+                <p class="card-title">${item.title}</p>
                 <div class="card-descr">
-                    <!-- <a href=${item.url} class="card-title">${item.title}</a> -->
-                    <p class="card-title">${item.title}</p>
-                    <div class="descr-fields">
-                        <p class="descr-text">Score: ${item.score}</p>
-                        <p class="descr-text">Episodes: ${item.episodes}</p>
-                        <p class="descr-text">Aired: ${item.start_date} - ${item.end_date}</p>
-                        <p class="descr-text">MAL Members: ${item.members}</p>
+                    <div class="descr-field">
+                        <i class="far fa-star descr-icon1"></i>
+                        <p>Score: ${item.score}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-book-open descr-icon2"></i>
+                        <p>Episodes: ${item.episodes}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-clock descr-icon3"></i>
+                        <p>Aired: ${item.start_date} - ${item.end_date}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-users descr-icon4"></i>
+                        <p>MAL Members: ${item.members}</p>
                     </div>
                 </div>
             </div>`;
@@ -81,16 +110,24 @@ class UI {
             }
             this.display.innerHTML +=  
             `<div class="item-card">
-                <a href=${item.url}>
-                    <img class="card-img" src="${item.image_url}" alt="123">
-                </a>
+                <div class="card-img">
+                    <a href=${item.url}>
+                        <img class="item-img" src="${item.image_url}" alt="123">
+                    </a>
+                </div>
+                <p class="card-title">${item.title}</p>
                 <div class="card-descr">
-                    <!-- <a href=${item.url} class="card-title">${item.title}</a> -->
-                    <p class="card-title">${item.title}</p>
-                    <div class="descr-fields">
-                        <p class="descr-text">Score: ${item.score}</p>
-                        <p class="descr-text">Published: ${item.start_date} - ${item.end_date}</p>
-                        <p class="descr-text">MAL Members: ${item.members}</p>
+                    <div class="descr-field">
+                        <i class="far fa-star descr-icon1"></i>
+                        <p>Score: ${item.score}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-clock descr-icon3"></i>
+                        <p>Published: ${item.start_date} - ${item.end_date}</p>
+                    </div>
+                    <div class="descr-field">
+                        <i class="fas fa-users descr-icon4"></i>
+                        <p>MAL Members: ${item.members}</p>
                     </div>
                 </div>
             </div>`;

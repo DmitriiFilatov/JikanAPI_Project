@@ -17,24 +17,25 @@ const searchItem = document.getElementById('search_query');
 
 const displayHdr = document.getElementById('display_header');
 
+const animation = document.getElementById('loading');
+
 //Search an item on button press
-searchBtn.addEventListener('click', (e) => {
+searchBtn.addEventListener('click', async (e) => {
     if (searchItem.value !== '') {
         let type = '';
         if (radioAnime.checked) type = 'anime' 
         else if (radioManga.checked) type = 'manga';
         
-        api.searchItem(type, searchItem.value).then(data => {
+        animation.style.visibility = 'visible';
+        await api.searchItem(type, searchItem.value).then(data => {
             display.innerHTML = '';
             if (type == 'anime') data.items.results.forEach(item => ui.renderAnime(item))
-            else if (type == 'manga') {
-                console.log(data.items.results);
-                data.items.results.forEach(item => ui.renderManga(item));
-            }
+            else if (type == 'manga') data.items.results.forEach(item => ui.renderManga(item));
         });
-    } else {
-        console.log('wtf');
-    }
+        } else {
+            console.log('An error occured.');
+        }
+        animation.style.visibility = 'hidden';
 });
 
 //Search an item on enter press
@@ -51,14 +52,15 @@ function checkRadioButtons() {
 }
 
 //Display top list of selected type
-function displayTopList(type) {
+async function displayTopList(type) {
+    animation.style.visibility = 'visible';
     display.innerHTML = '';
     displayHdr.innerHTML = `Top ${type.charAt(0).toUpperCase() + type.slice(1)} Of All Time`;
-    api.getTopItems(type).then(data => {
-        console.log(data);
+    await api.getTopItems(type).then(data => {
         const items = data.itemsArray.splice(0, 15); // Limit to 15 items
         items.forEach(item => ui.renderTopItem(item, type));
     });
+    animation.style.visibility = 'hidden';
 }
 
 radioTopAnime.addEventListener('click', (e) => {
